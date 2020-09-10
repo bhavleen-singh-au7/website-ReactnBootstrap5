@@ -1,13 +1,32 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-
   const [data, setData] = useState({
-    fullname
-  })
+    fullname: "",
+    phone: "",
+    email: "",
+    msg: "",
+  });
 
-  const formSubmit = () => {
-    //
+  const InputEvent = (e) => {
+    const { name, value } = e.target;
+
+    setData((preVal) => {
+      return {
+        ...preVal,
+        [name]: value,
+      };
+    });
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    alert(`
+    My name is ${data.fullname}.
+    My mobile number is ${data.phone}.
+    My Email Address is ${data.email}.
+    I want to say ${data.msg}.
+    `);
   };
 
   return (
@@ -15,7 +34,7 @@ const Contact = () => {
       <div className="my-5">
         <h1 className="text-center">Contact Us</h1>
       </div>
-      <div className="container container-div">
+      <div className="container container-div mb-5">
         <div className="row">
           <div className="col-md-6 col-10 mx-auto">
             <form onSubmit={formSubmit}>
@@ -28,7 +47,7 @@ const Contact = () => {
                   className="form-control"
                   id="full_name"
                   name="fullname"
-                  value={}
+                  value={data.fullname}
                   onChange={InputEvent}
                   placeholder="Enter your name"
                   required
@@ -43,7 +62,7 @@ const Contact = () => {
                   className="form-control"
                   id="ph_no"
                   name="phone"
-                  // value={}
+                  value={data.phone}
                   onChange={InputEvent}
                   placeholder="Enter your Phone Number"
                 />
@@ -57,7 +76,7 @@ const Contact = () => {
                   className="form-control"
                   id="email"
                   name="email"
-                  // value={}
+                  value={data.email}
                   onChange={InputEvent}
                   placeholder="name@example.com"
                   required
@@ -75,11 +94,10 @@ const Contact = () => {
                 <textarea
                   id="msg"
                   name="msg"
-                  rows="4"
-                  cols="50"
+                  style={{ height: "5%", width: "100%" }}
                   required
                   name="msg"
-                  // value={}
+                  value={data.msg}
                   onChange={InputEvent}
                   placeholder="type your message here"
                   className="p-2"
