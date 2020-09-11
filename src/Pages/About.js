@@ -1,12 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import Common from "./Common";
-import AboutImg from "./images/about.png";
+import Layout from "../Components/Layout";
+import AboutImg from "../images/about.png";
 
 const About = () => {
   return (
     <>
-      <Common
+      <Layout
         name="Welcome to About Page"
         imgsrc={AboutImg}
         visit="/contact"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Common = (props) => {
+const Layout = (props) => {
   return (
     <>
       <section id="header" className="d-flex align-items-center">
@@ -15,7 +15,7 @@ const Common = (props) => {
                     <strong className="brand-name">
                       Singh Electronics
                     </strong>
-                  </h1> 
+                  </h1>
                   <h2 className="my-3">
                     We are the team of hardworking developers waiting
                     for you.
@@ -45,4 +45,4 @@ const Common = (props) => {
   );
 };
 
-export default Common;
+export default Layout;

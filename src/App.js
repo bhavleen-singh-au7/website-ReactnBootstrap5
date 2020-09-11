@@ -1,10 +1,10 @@
 import React from "react";
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Service from "./Service";
-import Navbar from "./Navbar";
-import Foooter from "./Footer";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Service from "./Pages/Service";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer.js"
 import { Switch, Route, Redirect } from "react-router-dom";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
         <Route exact path="/service" component={Service} />
         <Redirect to="/" />
       </Switch>
-      <Foooter />
+      <Footer />
     </>
   );
 };

@@ -1,12 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import Common from "./Common";
-import HomeImg from "./images/home.png";
+import Layout from "../Components/Layout";
+import HomeImg from "../images/home.png";
 
 const Home = () => {
   return (
     <>
-      <Common
+      <Layout
         name="Grow your business with"
         imgsrc={HomeImg}
         visit="/service"
